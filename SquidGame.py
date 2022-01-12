@@ -1,4 +1,7 @@
-// Abhiram, Ajay, Ganesh
+#Player1: Abhiram
+#Player2: Ajay
+#Player3: Ganesh
+
 from tkinter import *
 from tkinter import messagebox
 from PIL import ImageTk,Image
@@ -122,7 +125,7 @@ def round1():
                 no+=1
                 imgLabel.config(image=photos[no])
                 if no==11:
-                    messagebox.showwarning("Hangman","Game Over")
+                    messagebox.showwarning("Hangman","Game Over\nYour scored "+str(score))
                     r1.destroy()
                     root.state('zoomed')
     f2.grid(row=2,column=0,padx=2)
@@ -131,7 +134,6 @@ def round1():
 
 def round2():
     global root
-    global r2ct
     root.iconify()
     r2=Toplevel()
     w=350
@@ -145,10 +147,12 @@ def round2():
     f1=LabelFrame(r2,text="Memory Game",font="Consolas 24 bold")
     Label(f1,text="Pick 2 count 1").pack()
     f1.grid(row=0,column=0)
-
+    global check2
+    check2=0
     f5=LabelFrame(r2,pady=5)
-    f51=LabelFrame(f5,text="Hint",font="Consolas 24 bold",bg="yellow")
-    Label(f51,text="hello",font="comicsans").grid(row=0,column=0)
+    f51=LabelFrame(f5,text="Check",font="Consolas 24 bold",bg="yellow")
+    s2=Label(f51,text=str(check2),font="comicsans")
+    s2.grid(row=0,column=0)
     f51.grid(row=1,column=0,columnspan=1,padx=40)
     f52=LabelFrame(f5,text="Score",font="Consolas 24 bold",bg="blue")
     sl=Label(f52,text=str(score),font="comicsans")
@@ -166,7 +170,7 @@ def round2():
     answer_list=[]
     answer_dict={}
     def button_click(b,number):
-        global check,count,score,answer_list,answer_dict
+        global check,check2,count,score,answer_list,answer_dict
         if b["text"]==' ' and count<2:
             b["text"]=matches[number]
             answer_list.append(number)
@@ -182,8 +186,8 @@ def round2():
                 check+=1
                 #Label(r2,text="Count:"+str(check),font="Consolas 24 bold").pack()
                 if(check==6):
-                    messagebox.showinfo("R1 COMPLETED!","Congrats one surpassing Round 1\n"+"Your score:"+str(score))
-                    messagebox.showinfo("R1 COMPLETED!","You can proceed to the next round")
+                    messagebox.showinfo("R2 COMPLETED!","Congrats one surpassing Round 2\n"+"Your score:"+str(score))
+                    messagebox.showinfo("R2 COMPLETED!","You can proceed to the next round")
                     try:
                         r2.destroy()
                     except:
@@ -193,13 +197,20 @@ def round2():
                 answer_list=[]
                 answer_dict={}
             else:
-                #f2.config(text="Wrong Guess!")
-                count=0
-                answer_list=[]
-                messagebox.showinfo("","Wrong Guess!")
-                for k in answer_dict:
-                    k["text"]=" "
-                answer_dict={}
+                if check2==10:
+                    messagebox.showwarning("Memory Game","Game Over\nYour scored "+str(score))
+                    r2.destroy()
+                    root.state('zoomed')
+                else:
+                    count=0
+                    check2+=1
+                    s2.config(text=str(11-check2))
+                    answer_list=[]
+                    
+                    messagebox.showinfo("Reminder","Wrong Guess!")
+                    for k in answer_dict:
+                        k["text"]=" "
+                    answer_dict={}
 
     b0=Button(f2,text=' ',font="Consolas 24 bold",height=1,width=4,command=lambda:button_click(b0,0))
     b1=Button(f2,text=' ',font="Consolas 24 bold",height=1,width=4,command=lambda:button_click(b1,1))
@@ -236,6 +247,8 @@ def round2():
 def round3():
     global root
     global score
+    global no
+    no=0
     root.iconify()
     r3=Toplevel()
     w=495
@@ -273,15 +286,6 @@ def round3():
     Label(f1,image=s4[l]).grid(row=2,column=1)
     f1.grid(row=0,column=0)
 
-    f5=LabelFrame(r3,pady=5)
-    f51=LabelFrame(f5,text="Hint",font="Consolas 24 bold",bg="yellow")
-    Label(f51,text="hello",font="comicsans").grid(row=0,column=0)
-    f51.grid(row=1,column=0,columnspan=1,padx=30)
-    f52=LabelFrame(f5,text="Score",font="Consolas 24 bold",bg="blue")
-    sl=Label(f52,text=str(score),font="comicsans")
-    sl.grid(row=1,column=1)
-    f52.grid(row=1,column=1,columnspan=5,padx=30)
-    f5.grid(row=1,column=0)
     
     global lblWord
     lblWord=StringVar()
@@ -290,7 +294,7 @@ def round3():
     Label(f21,textvariable=lblWord,font="Consolas 24 bold").grid(row=0,column=3,columnspan=6,padx=10)
     f21.grid(row=1,column=0,columnspan=1,padx=40)
     f22=LabelFrame(f2,text="Score",font="Consolas 24 bold",bg="blue")
-    sl=Label(f22,text=str(score),font="comicsans")
+    sl=Label(f22,text=str(no),font="comicsans")
     sl.grid(row=1,column=1)
     f22.grid(row=1,column=1,columnspan=5,padx=40)
     f2.grid(row=1,column=0)
@@ -302,8 +306,6 @@ def round3():
     for c in ''.join(random.sample("FGHQYALSPRKI", len("FGHQYALSPRKI"))):
         if(len(s)%12!=0):
             s+=c
-    global no
-    no=0
     for c in ''.join(random.sample(s, len(s))):
         Button(f3,text=c,command=lambda c=c:guess(c),font="Consolas 24 bold",width=4).grid(row=1+n//6,column=n%6)
         n+=1
@@ -324,7 +326,7 @@ def round3():
                         sl.config(text=str(score))
                     lblWord.set("".join(guessed))
                     if lblWord.get()==the_word_withSpaces:
-                        messagebox.showinfo("R1 COMPLETED!","Congrats one surpassing Round 3\n"+"Your score:"+str(score))
+                        messagebox.showinfo("R3 COMPLETED!","Congrats one surpassing Round 3\n"+"Your score:"+str(score))
                         messagebox.showinfo("HURRAY!","Congrats!! You win the game")
                         try:
                             r3.destroy()
@@ -336,8 +338,9 @@ def round3():
                     
             else:
                 no+=1
+                #s2.config(text=str(no))
                 if no==len(the_word):
-                    messagebox.showwarning("Hangman","Game Over")
+                    messagebox.showwarning("4 Pics 1 Word","Game Over\nYou were able to score "+str(score))
     
     r3.mainloop()
 
@@ -351,16 +354,11 @@ def round3():
 def ins():
     r=Toplevel(root)
     r.title("Instructions")
-    r.minsize(430,230)
-    r.maxsize(430,230)
-    r.geometry("430x230")
-    Label(r,text="Instructions",font=("comicsans",50)).pack()
-    Label(r,text="1. The game begins with a bang").pack()
-    Label(r,text="2. Make sure you enter the correct username").pack()
-    Label(r,text="3. Your game begins once you log in").pack()
-    Label(r,text="4. Your score will be evaluated based on each round").pack()
-    Label(r,text="5. The one who surpasses all the 5 rounds wins the game").pack()
-    Label(r,text="6. The scores will be displayed in the leaderboard").pack()
+    r.geometry("500x350")
+    Label(r,text="INSTRUCTIONS",font=("consolas bold",40)).pack()
+    Label(r,text="\nRound 1\nGuess the Correct letters of the Word\nWith any wrong guesses, Man is closer to Death!!\n",font=("consolas bold",10)).pack()
+    Label(r,text="\nRound 2\nThis is the Ultimate test of your Memory!! \nRemember the Tile Number and match with Similar Tile\n",font=("consolas bold",10)).pack()
+    Label(r,text="\nRound 3\nAre you Creative enough??\nFind the relation between ALL 4 Pictures\n",font=("consolas bold",10)).pack()
     r.mainloop()
 
 
