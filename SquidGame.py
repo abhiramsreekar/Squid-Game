@@ -423,7 +423,7 @@ Label(f1,image=photo).grid(row=0,column=0)
 #my_button=Button(root,text="Stop Song",command=play)
 #my_button.pack()
 
-play_button=Button(f1,text="Play Game",font=("fixedsys",11),command=round3,pady=8)
+play_button=Button(f1,text="Play Game",font=("fixedsys",11),command=round1,pady=8)
 play_button.grid(row=2,column=0)
 ins_button=Button(f1,text="View Instructions",font=("fixedsys",11),command=ins,pady=10)
 ins_button.grid(row=3,column=0)
