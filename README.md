@@ -1,1 +1,1 @@
-# MiniProject
+# SQuid GAme
