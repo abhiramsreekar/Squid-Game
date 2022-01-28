@@ -11,6 +11,8 @@ This project is purely based on _Python_
 **Packages used:** tkinter, PIL, random
 ## Screenshots
 
+<img src="https://user-images.githubusercontent.com/83418471/151545649-89363df5-9890-4f47-92d8-69954a834b5f.png" width="200" height="400" />
+
 ![pic1](https://user-images.githubusercontent.com/83418471/151529085-046f10e6-4c0d-4a3e-a8fb-efee54cd00c7.jpg) 
 
 ![pic2](https://user-images.githubusercontent.com/83418471/151529190-8e1fc94e-66d8-411f-8598-9364c443d712.jpg)
