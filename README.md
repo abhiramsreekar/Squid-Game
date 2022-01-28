@@ -13,13 +13,11 @@ This project is purely based on _Python_
 
 <img src="https://user-images.githubusercontent.com/83418471/151545649-89363df5-9890-4f47-92d8-69954a834b5f.png" width="400" height="200" />
 
-![pic1](https://user-images.githubusercontent.com/83418471/151529085-046f10e6-4c0d-4a3e-a8fb-efee54cd00c7.jpg) 
+<img src="https://user-images.githubusercontent.com/83418471/151552213-bb0e113b-2cb6-4f08-9146-739db9125df2.png" width="400" height="200" />
 
-![pic2](https://user-images.githubusercontent.com/83418471/151529190-8e1fc94e-66d8-411f-8598-9364c443d712.jpg)
+<img src="https://user-images.githubusercontent.com/83418471/151552359-7f4a6ec2-b3e7-4db5-9994-85eebfe43064.png" width="400" height="200" />
 
-![pic3](https://user-images.githubusercontent.com/83418471/151529283-2bf943c1-eb46-4f36-abfb-6135ff1ef60e.jpg)
-
-![pic4](https://user-images.githubusercontent.com/83418471/151529352-725726c1-7b1e-400f-a24c-f76fdd830209.jpg)
+<img src="https://user-images.githubusercontent.com/83418471/151552434-224afdc6-42b0-41bc-a3c3-1de98f2478b1.png" width="400" height="200" />
 
 ## Bugs
 
