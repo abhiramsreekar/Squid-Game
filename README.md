@@ -11,9 +11,9 @@ This project is purely based on _Python_
 **Packages used :books::** tkinter, PIL, random
 ## Screenshots
 
-<img src="https://user-images.githubusercontent.com/83418471/151545649-89363df5-9890-4f47-92d8-69954a834b5f.png" width="500" height="350" /> 
+<img src="https://user-images.githubusercontent.com/83418471/151545649-89363df5-9890-4f47-92d8-69954a834b5f.png" width="400" height="250" /> 
 
-<img src="https://user-images.githubusercontent.com/83418471/151552213-bb0e113b-2cb6-4f08-9146-739db9125df2.png" width="210" height="280" /> <img src="https://user-images.githubusercontent.com/83418471/151552359-7f4a6ec2-b3e7-4db5-9994-85eebfe43064.png" width="200" height="250" /> <img src="https://user-images.githubusercontent.com/83418471/151552434-224afdc6-42b0-41bc-a3c3-1de98f2478b1.png" width="240" height="300" />
+<img src="https://user-images.githubusercontent.com/83418471/151552213-bb0e113b-2cb6-4f08-9146-739db9125df2.png" width="230" height="280" /> <img src="https://user-images.githubusercontent.com/83418471/151552359-7f4a6ec2-b3e7-4db5-9994-85eebfe43064.png" width="200" height="250" /> <img src="https://user-images.githubusercontent.com/83418471/151552434-224afdc6-42b0-41bc-a3c3-1de98f2478b1.png" width="250" height="310" />
 
 ## Bugs :bug:
 
