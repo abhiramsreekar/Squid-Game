@@ -24,8 +24,8 @@ I am openly disclosing the bugs so that everyone can know the defects prior.
 - **4 Pics 1 Word**: The last round was pretty much designed the same way as _Hangman_, it was actually supposed to take an entire word, but we did it with letters for now.
 
 
-## Wanna Contribute :question:
+## Contact me :iphone::
 
 Please help if you like my work and wish to make this project better. I would be immesely happy to seek guidance
 
-Contact: abhiramsreekar123@gmail.com
+Reach me out via abhiramsreekar123@gmail.com
